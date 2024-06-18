@@ -40,7 +40,7 @@ const NewsCards = () => {
                 {/* section for title bar */}
                 <section className="flex text-white my-4 bg-gray-400 py-5 px-2 justify-between items-center">
                     <div>
-                        <span className="bg-purple-500 p-1 rounded-sm">Popular</span>
+                        <span className="bg-purple-500 p-1 rounded-sm capitalize">{tabQuery}</span>
                     </div>
                     <div className="flex gap-1">
                         <button onClick={() => handleBusiness("business")} className="p-1 rounded-sm bg-white text-black">Business</button>
