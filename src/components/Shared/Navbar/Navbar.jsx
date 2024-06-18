@@ -23,14 +23,12 @@ const Navbar = () => {
                         {moment().format("dddd, MMM Do, YYYY")}
                     </p>
                     {/* social links */}
-                    <p>
                         <ul className='flex gap-5 text-white'>
                             <li><FaFacebook /></li>
                             <li><FaTwitter /></li>
                             <li><FaLinkedinIn /></li>
                             <li><FaDiscord /></li>
                         </ul>
-                    </p>
                 </section>
                 {/* section for logo and the routes/navigations */}
                 <section className='bg-gray-400 p-2 grid md:grid-cols-3'>

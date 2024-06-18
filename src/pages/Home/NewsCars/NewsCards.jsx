@@ -18,7 +18,6 @@ const NewsCards = () => {
         setCurrentPage(1); // Reset to first page when tab changes
     }
 
-    console.log(searchQuery)
 
     useEffect(() => {
         const fetchNews = async () => {
@@ -37,14 +36,14 @@ const NewsCards = () => {
         fetchNews();
     }, [tabQuery]);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <p className='flex text-5xl font-semibold justify-center items-center h-[100vh]'>Loading...</p>;
     if (error) return <p>Error loading news: {error.message}</p>;
 
     const filteredArticles = articles
         .filter(article => article.title !== '[Removed]' && article.source.name !== '[Removed]')
         .filter(article =>
             article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            article.description.toLowerCase().includes(searchQuery.toLowerCase())
+            article?.description?.toLowerCase().includes(searchQuery.toLowerCase())
         );
 
     const indexOfLastArticle = currentPage * articlesPerPage;
