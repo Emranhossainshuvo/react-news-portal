@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Main from "../Main/Main";
+import NewsDetailPage from "../pages/NewsDetailPage/NewsDetailPage";
 
 
 export const router = createBrowserRouter([
@@ -13,6 +14,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
+      },
+      {
+        path: "/detail",
+        element: <NewsDetailPage />
       }
     ]
   },

@@ -4,7 +4,7 @@ const NewsCards = () => {
     return (
         <>
             {/* section to hold everything in this page */}
-            <section>
+            <section className="mt-10">
                 {/* section for title bar */}
                 <section>
 
