@@ -7,9 +7,9 @@ const Navbar = () => {
     return (
         <>
             {/* section that will hold everything in this page */}
-            <section>
+            <section className=''>
                 {/* section for date time and social links */}
-                <section className="bg-[#31473A]  px-2 flex justify-between items-center w-full h-7">
+                <section className="bg-[#31473A]   px-2 flex justify-between items-center w-full h-7">
                     {/* date and time */}
                     <p className='text-white'>
                         {moment().format("dddd, MMM Do, YYYY")}
@@ -38,15 +38,6 @@ before:inline-block before:size-6 before:bg-white checked:before:bg-blue-200 bef
 
 after:absolute after:end-1.5 after:top-[calc(50%-0.40625rem)] after:w-[.8125rem] after:h-[.8125rem] after:bg-no-repeat after:bg-[right_center] after:bg-[length:.8125em_.8125em] after:transform after:transition-all after:ease-in-out after:duration-200 after:opacity-70 checked:after:start-1.5 checked:after:end-auto" type="checkbox" id="darkSwitch" />
 
-
-
-                        <Dropdown className='px-3' label="Dropdown button">
-                            <Dropdown.Item>Dashboard</Dropdown.Item>
-                            <Dropdown.Item>Settings</Dropdown.Item>
-                            <Dropdown.Item>Earnings</Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Item>Separated link</Dropdown.Item>
-                        </Dropdown>
                         <button className='btn'>
                             Login
                         </button>
