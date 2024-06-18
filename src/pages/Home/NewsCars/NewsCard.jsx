@@ -8,7 +8,7 @@ const NewsCard = ({news}) => {
 
     return (
         <>
-            <div className="card rounded-none bg-base-100 shadow-xl">
+            <div className="card cursor-pointer hover:shadow-sm hover:shadow-black rounded-none bg-base-100 shadow-xl">
                 <figure><img className="h-64" src={urlToImage ? urlToImage : "https://st4.depositphotos.com/14953852/24787/v/380/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"} alt="Food items" /></figure>
                 <div className="card-body flex flex-col items-start">
                     <h2 className="card-title">{title}</h2>
