@@ -1,10 +1,12 @@
 import Banner from "./Banner/Banner";
+import NewsCards from "./NewsCars/NewsCards";
 
 const Home = () => {
     return (
         <>
-         <Banner /> 
-         <h3 className="">Home</h3>
+            <Banner />
+            <NewsCards />
+            <h3 className="">Home</h3>
         </>
     );
 };
