@@ -9,32 +9,45 @@ const NewsCards = () => {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const {searchQuery} = useContext(SearchContext);
+    const [tabQuery, setTabQuery] = useState("all")
+    const { searchQuery } = useContext(SearchContext);
+
+    const handleBusiness = (value) => {
+        setTabQuery(value)
+    }
 
     console.log(searchQuery)
 
     useEffect(() => {
-        fetch("https://newsapi.org/v2/everything?q=all&apiKey=f1bf94591c5e435ca25985e0523f7c83")
+        fetch(`https://newsapi.org/v2/everything?q=${tabQuery}&apiKey=f1bf94591c5e435ca25985e0523f7c83`)
             .then(res => res.json())
             .then(data => {
                 setArticles(data.articles)
             })
-    }, [])
+    }, [tabQuery])
 
     const filteredArticles = articles
         .filter(article => article.title !== '[Removed]' && article.source.name !== '[Removed]')
-        .filter(article => 
-            article.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        .filter(article =>
+            article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             article.description.toLowerCase().includes(searchQuery.toLowerCase())
         );
 
     return (
         <>
             {/* section to hold everything in this page */}
-            <section className="mt-10">
+            <section className="">
                 {/* section for title bar */}
-                <section>
-
+                <section className="flex text-white my-4 bg-gray-400 py-5 px-2 justify-between items-center">
+                    <div>
+                        <span className="bg-purple-500 p-1 rounded-sm">Popular</span>
+                    </div>
+                    <div className="flex gap-1">
+                        <button onClick={() => handleBusiness("business")} className="p-1 rounded-sm bg-white text-black">Business</button>
+                        <button  onClick={() => handleBusiness("technology")} className="p-1 rounded-sm bg-white text-black">Technology</button>
+                        <button  onClick={() => handleBusiness("entertainment")} className="p-1 rounded-sm bg-white text-black">Entertainment</button>
+                        <button  onClick={() => handleBusiness("science")} className="p-1 rounded-sm bg-white text-black">Science</button>
+                    </div>
                 </section>
 
                 {/* section for the cards */}
@@ -45,9 +58,9 @@ const NewsCards = () => {
                         news={article}
                     >
 
-                    </NewsCard> )}
+                    </NewsCard>)}
 
-                    
+
 
                 </section>
             </section>
