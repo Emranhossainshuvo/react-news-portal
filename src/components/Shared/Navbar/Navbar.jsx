@@ -4,6 +4,11 @@ import { Dropdown } from "flowbite-react";
 
 const Navbar = () => {
 
+    const handleSearch = (e) => {
+
+        
+    }
+
     return (
         <>
             {/* section that will hold everything in this page */}
@@ -29,7 +34,7 @@ const Navbar = () => {
 
                     <h3 className='tracking-tight text-3xl font-semibold'>News portal</h3>
 
-                    <input type="text" className='ps-2 outline-none rounded-md' placeholder='Search anything...' />
+                    <input onChange={handleSearch} type="text" className='ps-2 outline-none rounded-md' placeholder='Search anything...' />
 
                     <section className='flex gap-3 items-center justify-end'>
                         <input data-hs-theme-switch="" className="relative w-[3.25rem] h-7 bg-gray-100 checked:bg-none checked:bg-blue-600 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 ring-1 ring-transparent focus:border-gray-700 focus:ring-gray-700 focus:outline-none appearance-none

@@ -10,7 +10,6 @@ const NewsCard = ({news}) => {
         <>
             <div className="card rounded-none bg-base-100 shadow-xl">
                 <figure><img className="h-64" src={urlToImage ? urlToImage : "https://st4.depositphotos.com/14953852/24787/v/380/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"} alt="Food items" /></figure>
-                <p className="bg-slate-900 text-white absolute right-0 mr-4 mt-1 p-2">Sports</p>
                 <div className="card-body flex flex-col items-start">
                     <h2 className="card-title">{title}</h2>
                     <p>{content}</p>

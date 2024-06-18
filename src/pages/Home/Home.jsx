@@ -4,7 +4,7 @@ import NewsCards from "./NewsCars/NewsCards";
 const Home = () => {
     return (
         <>
-            <Banner />
+            {/* <Banner /> */}
             <NewsCards />
             <h3 className="">Home</h3>
         </>
