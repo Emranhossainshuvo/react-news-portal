@@ -1,8 +1,10 @@
+import Banner from "./Banner/Banner";
 
 const Home = () => {
     return (
         <>
-         <h3 className="h-[100vh]">Home</h3>   
+         <Banner /> 
+         <h3 className="">Home</h3>
         </>
     );
 };
