@@ -10,12 +10,16 @@ const NewsCards = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=f1bf94591c5e435ca25985e0523f7c83&q=cricket")
+        fetch("https://newsapi.org/v2/everything?q=all&apiKey=f1bf94591c5e435ca25985e0523f7c83")
             .then(res => res.json())
             .then(data => {
                 setArticles(data.articles)
             })
     }, [])
+
+    const filteredArticles = articles.filter(article => 
+        article.title !== '[Removed]' && article.source.name !== '[Removed]'
+    );
 
     return (
         <>
@@ -30,7 +34,7 @@ const NewsCards = () => {
 
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
 
-                    {articles.map(article => <NewsCard key={article.id}
+                    {filteredArticles.map(article => <NewsCard key={article.id}
                         news={article}
                     >
 
