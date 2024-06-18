@@ -1,12 +1,15 @@
 import moment from 'moment';
 import { FaFacebook, FaTwitter, FaLinkedinIn, FaDiscord } from "react-icons/fa6";
 import { Dropdown } from "flowbite-react";
+import { SearchContext } from '../../../Contexts/SearchContext/SearchContext';
+import { useContext } from 'react';
 
 const Navbar = () => {
 
-    const handleSearch = (e) => {
+    const { setSearchQuery } = useContext(SearchContext);
 
-        
+    const handleSearch = (e) => {
+        setSearchQuery(e.target.value)
     }
 
     return (

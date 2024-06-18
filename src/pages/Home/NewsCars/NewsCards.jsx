@@ -1,13 +1,17 @@
 import { SlCalender } from "react-icons/sl";
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import NewsCard from "./NewsCard";
+import { SearchContext } from "../../../Contexts/SearchContext/SearchContext";
 
 const NewsCards = () => {
 
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const {searchQuery} = useContext(SearchContext);
+
+    console.log(searchQuery)
 
     useEffect(() => {
         fetch("https://newsapi.org/v2/everything?q=all&apiKey=f1bf94591c5e435ca25985e0523f7c83")
