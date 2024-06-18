@@ -21,9 +21,12 @@ const NewsCards = () => {
             })
     }, [])
 
-    const filteredArticles = articles.filter(article => 
-        article.title !== '[Removed]' && article.source.name !== '[Removed]'
-    );
+    const filteredArticles = articles
+        .filter(article => article.title !== '[Removed]' && article.source.name !== '[Removed]')
+        .filter(article => 
+            article.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+            article.description.toLowerCase().includes(searchQuery.toLowerCase())
+        );
 
     return (
         <>
