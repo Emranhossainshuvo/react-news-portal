@@ -14,7 +14,7 @@ const NewsDetailPage = () => {
                 <img className="" src={news.urlToImage} alt="" />
 
                 <h4 className="text-3xl font-semibold mt-7">{news.title}</h4>
-                <p className="mt-7">{news.content}</p>
+                <p className="mt-7">{news.description}</p>
             </section>
         </>
     );

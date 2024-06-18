@@ -18,28 +18,28 @@ const Navbar = () => {
             {/* section that will hold everything in this page */}
             <section className=''>
                 {/* section for date time and social links */}
-                <section className="bg-[#31473A]   px-2 flex justify-between items-center w-full h-7">
+                <section className="bg-[#31473A] px-2 flex justify-between items-center w-full h-7">
                     {/* date and time */}
                     <p className='text-white'>
                         {moment().format("dddd, MMM Do, YYYY")}
                     </p>
                     {/* social links */}
-                        <ul className='flex gap-5 text-white'>
-                            <li><FaFacebook /></li>
-                            <li><FaTwitter /></li>
-                            <li><FaLinkedinIn /></li>
-                            <li><FaDiscord /></li>
-                        </ul>
+                    <ul className='flex gap-5 text-white'>
+                        <li><FaFacebook /></li>
+                        <li><FaTwitter /></li>
+                        <li><FaLinkedinIn /></li>
+                        <li><FaDiscord /></li>
+                    </ul>
                 </section>
                 {/* section for logo and the routes/navigations */}
                 <section className='bg-gray-400 p-2 grid md:grid-cols-3'>
 
                     <h3 className='tracking-tight text-3xl font-semibold'>
                         <Link>
-                        News portal
+                            News portal
                         </Link>
-                        
-                        </h3>
+
+                    </h3>
 
                     <input onChange={handleSearch} type="text" className='ps-2 outline-none rounded-md' placeholder='Search anything...' />
 
