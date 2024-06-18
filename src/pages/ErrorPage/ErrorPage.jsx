@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./error.css"
 
 const ErrorPage = () => {
+
+
     return (
         <>
             <div className="grid h-screen px-4 bg-white place-content-center">
