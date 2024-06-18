@@ -3,6 +3,7 @@ import { FaFacebook, FaTwitter, FaLinkedinIn, FaDiscord } from "react-icons/fa6"
 import { Dropdown } from "flowbite-react";
 import { SearchContext } from '../../../Contexts/SearchContext/SearchContext';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -33,7 +34,12 @@ const Navbar = () => {
                 {/* section for logo and the routes/navigations */}
                 <section className='bg-gray-400 p-2 grid md:grid-cols-3'>
 
-                    <h3 className='tracking-tight text-3xl font-semibold'>News portal</h3>
+                    <h3 className='tracking-tight text-3xl font-semibold'>
+                        <Link>
+                        News portal
+                        </Link>
+                        
+                        </h3>
 
                     <input onChange={handleSearch} type="text" className='ps-2 outline-none rounded-md' placeholder='Search anything...' />
 

@@ -1,4 +1,3 @@
-import Banner from "./Banner/Banner";
 import NewsCards from "./NewsCars/NewsCards";
 
 const Home = () => {
@@ -6,7 +5,6 @@ const Home = () => {
         <>
             {/* <Banner /> */}
             <NewsCards />
-            <h3 className="">Home</h3>
         </>
     );
 };

@@ -74,7 +74,7 @@ const NewsCards = () => {
                     ))}
                 </section>
 
-                <section className="mt-4">
+                <section className="mt-10">
                     <Pagination totalPages={totalPages} paginate={paginate} currentPage={currentPage} />
                 </section>
             </section>
