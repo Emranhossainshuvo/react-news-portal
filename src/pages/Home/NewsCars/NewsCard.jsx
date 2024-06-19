@@ -5,7 +5,9 @@ const NewsCard = ({ news }) => {
 
     const { title, urlToImage, content, description, publishedAt } = news || {};
 
-    const publishedTime = publishedAt.split("T")[0];
+    // console.log(news)
+
+    // const publishedTime = publishedAt.split("T")[0];
 
     const navigate = useNavigate(); 
 
@@ -22,7 +24,7 @@ const NewsCard = ({ news }) => {
                     <div className="card-body flex flex-col items-start">
                         <h2 className="card-title">{title}</h2>
                         <p>{description}</p>
-                        <p className="flex items-center gap-2"><SlCalender /><span>{publishedTime}</span></p>
+                        {/* <p className="flex items-center gap-2"><SlCalender /><span>{publishedTime}</span></p> */}
                     </div>
                 </div>
         </>

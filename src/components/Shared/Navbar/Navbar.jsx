@@ -1,6 +1,5 @@
 import moment from 'moment';
 import { FaFacebook, FaTwitter, FaLinkedinIn, FaDiscord } from "react-icons/fa6";
-import { Dropdown } from "flowbite-react";
 import { SearchContext } from '../../../Contexts/SearchContext/SearchContext';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';

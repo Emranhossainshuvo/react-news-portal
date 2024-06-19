@@ -4,57 +4,55 @@ import NewsCard from "./NewsCard";
 import { SearchContext } from "../../../Contexts/SearchContext/SearchContext";
 
 const NewsCards = () => {
-
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [currentPage, setCurrentPage] = useState(1);
-    const articlesPerPage = 9;
-    const [tabQuery, setTabQuery] = useState("all")
+    const [tabQuery, setTabQuery] = useState("all");
     const { searchQuery } = useContext(SearchContext);
-
-    const handleBusiness = (value) => {
-        setTabQuery(value);
-        setCurrentPage(1); // Reset to first page when tab changes
-    }
-
-    
+    const [currentPage, setCurrentPage] = useState(1);
+    const perPage = 9; // Number of articles per page
 
     useEffect(() => {
         const fetchNews = async () => {
-            setLoading(true);
-            setError(null);
             try {
-
-
-                const response = await axios.get(`https://newsapi.org/v2/everything?q=${tabQuery}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`);
-                setArticles(response.data.articles);
+                const response = await axios.get("https://react-news-portal-server-rho.vercel.app/news");
+                setArticles(response.data);
+                setLoading(false);
             } catch (err) {
                 setError(err);
-            } finally {
                 setLoading(false);
             }
         };
 
         fetchNews();
-    }, [tabQuery]);
+    }, []);
+
+    const handleBusiness = value => {
+        setTabQuery(value);
+    };
+
+    const filteredArticles = articles.filter(article => {
+        return (
+            (tabQuery === "all" || article.category === tabQuery) &&
+            (article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                article.description.toLowerCase().includes(searchQuery.toLowerCase()))
+        );
+    });
+
+    const indexOfLastArticle = currentPage * perPage;
+    const indexOfFirstArticle = indexOfLastArticle - perPage;
+    const currentArticles = filteredArticles.slice(indexOfFirstArticle, indexOfLastArticle);
+
+    const handleNextPage = () => {
+        setCurrentPage(prevPage => prevPage + 1);
+    };
+
+    const handlePrevPage = () => {
+        setCurrentPage(prevPage => prevPage - 1);
+    };
 
     if (loading) return <p className='flex text-5xl font-semibold justify-center items-center h-[100vh]'>Loading...</p>;
     if (error) return <p>Error loading news: {error.message}</p>;
-
-    const filteredArticles = articles
-        .filter(article => article.title !== '[Removed]' && article.source.name !== '[Removed]')
-        .filter(article =>
-            article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            article?.description?.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-
-    const indexOfLastArticle = currentPage * articlesPerPage;
-    const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-    const currentArticles = filteredArticles.slice(indexOfFirstArticle, indexOfLastArticle);
-
-    const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <>
@@ -73,40 +71,29 @@ const NewsCards = () => {
 
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {currentArticles.map(article => (
-                        <NewsCard key={article.description} news={article} />
+                        <NewsCard key={article._id} news={article} />
                     ))}
                 </section>
 
-                <section className="mt-10">
-                    <Pagination totalPages={totalPages} paginate={paginate} currentPage={currentPage} />
-                </section>
+                <div className="flex gap-2 justify-center my-10">
+                    <button
+                        onClick={handlePrevPage}
+                        disabled={currentPage === 1}
+                        className="bg-gray-200 px-3 py-1 rounded-l"
+                    >
+                        Previous
+                    </button>
+                    <button
+                        onClick={handleNextPage}
+                        disabled={indexOfLastArticle >= filteredArticles.length}
+                        className="bg-gray-200 px-3 py-1 rounded-r"
+                    >
+                        Next
+                    </button>
+                </div>
+
             </section>
         </>
-    );
-};
-
-const Pagination = ({ totalPages, paginate, currentPage }) => {
-    const pageNumbers = [];
-
-    for (let i = 1; i <= totalPages; i++) {
-        pageNumbers.push(i);
-    }
-
-    return (
-        <nav>
-            <ul className="flex justify-center space-x-2">
-                {pageNumbers.map(number => (
-                    <li key={number}>
-                        <button
-                            onClick={() => paginate(number)}
-                            className={`px-3 py-1 rounded ${currentPage === number ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-                        >
-                            {number}
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </nav>
     );
 };
 
