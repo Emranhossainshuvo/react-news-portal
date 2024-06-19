@@ -18,13 +18,16 @@ const NewsCards = () => {
         setCurrentPage(1); // Reset to first page when tab changes
     }
 
+    
 
     useEffect(() => {
         const fetchNews = async () => {
             setLoading(true);
             setError(null);
             try {
-                const response = await axios.get(`https://newsapi.org/v2/everything?q=${tabQuery}&apiKey=f1bf94591c5e435ca25985e0523f7c83`);
+
+
+                const response = await axios.get(`https://newsapi.org/v2/everything?q=${tabQuery}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`);
                 setArticles(response.data.articles);
             } catch (err) {
                 setError(err);
