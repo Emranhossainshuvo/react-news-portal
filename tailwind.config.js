@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        all : "Mitr"
+        all : "Roboto"
       }
     },
   },

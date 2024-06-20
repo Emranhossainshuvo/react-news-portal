@@ -6,13 +6,13 @@ import Banner from "./Banner/Banner";
 
 const Home = () => {
 
-    // const { searchQuery } = useContext(SearchContext);
+    const { searchQuery } = useContext(SearchContext);
 
     return (
         <>
-            {/* {!searchQuery &&
+            {!searchQuery &&
                 <Banner />
-            } */}
+            }
 
             <NewsCards />
         </>
