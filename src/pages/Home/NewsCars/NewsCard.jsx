@@ -3,15 +3,25 @@ import { Link, useNavigate } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
 
-    const { title, img, content, description, publishedAt } = news || {};
+    const { title, img, description } = news || {};
 
-    // console.log(news)
-
-    // const publishedTime = publishedAt.split("T")[0];
-
+    const truncateText = (text, wordLimit) => {
+        const words = text.split(' ');
+        if (words.length > wordLimit) {
+            return words.slice(0, wordLimit).join(' ') + '...';
+        }
+        return text;
+    };
+    const truncateTitle = (text, wordLimit) => {
+        const words = text.split(' ');
+        if (words.length > wordLimit) {
+            return words.slice(0, wordLimit).join(' ') + '...';
+        }
+        return text;
+    };
+    
     const navigate = useNavigate(); 
 
-    // console.log(news)
 
     const handelNavigation = () => {
         navigate(`/news`, {state: {news}})
@@ -20,10 +30,10 @@ const NewsCard = ({ news }) => {
     return (
         <>
                 <div onClick={handelNavigation} className="card cursor-pointer hover:shadow-sm hover:shadow-black rounded-none bg-base-100 shadow-xl">
-                    <figure><img className="h-64" src={img ? img : "https://st4.depositphotos.com/14953852/24787/v/380/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"} alt="Food items" /></figure>
+                    <figure><img className="h-64" src={img ? img : "https://st4.depositphotos.com/14953852/24787/v/380/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"} alt={title} /></figure>
                     <div className="card-body flex flex-col items-start">
-                        <h2 className="card-title">{title}</h2>
-                        <p>{description}</p>
+                        <h2 className="card-title">{truncateTitle(description, 4)}</h2>
+                        <p>{truncateText(description, 10)}</p>
                         {/* <p className="flex items-center gap-2"><SlCalender /><span>{publishedTime}</span></p> */}
                     </div>
                 </div>

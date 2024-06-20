@@ -59,13 +59,13 @@ const NewsCards = () => {
             <section className="">
                 <section className="flex text-white my-4 bg-gray-400 py-5 px-2 justify-between items-center">
                     <div>
-                        <span className="bg-purple-500 p-1 rounded-sm capitalize">{tabQuery}</span>
+                        <span className="bg-[#1A4D2E] text-lg font-bold p-2 rounded-sm capitalize">{tabQuery}</span>
                     </div>
                     <div className="flex gap-1">
-                        <button onClick={() => handleBusiness("business")} className="p-1 rounded-sm bg-white text-black">Business</button>
-                        <button onClick={() => handleBusiness("technology")} className="p-1 rounded-sm bg-white text-black">Technology</button>
-                        <button onClick={() => handleBusiness("entertainment")} className="p-1 rounded-sm bg-white text-black">Entertainment</button>
-                        <button onClick={() => handleBusiness("science")} className="p-1 rounded-sm bg-white text-black">Science</button>
+                        <button onClick={() => handleBusiness("business")} className="p-2 text-lg font-bold rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Business</button>
+                        <button onClick={() => handleBusiness("technology")} className="p-2 text-lg font-bold rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Technology</button>
+                        <button onClick={() => handleBusiness("entertainment")} className="p-2 rounded-sm bg-[#F5EFE6] text-lg font-bold text-[#1A4D2E]">Entertainment</button>
+                        <button onClick={() => handleBusiness("science")} className="p-2 rounded-sm bg-[#F5EFE6] text-lg font-bold text-[#1A4D2E]">Science</button>
                     </div>
                 </section>
 

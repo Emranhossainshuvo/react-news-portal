@@ -15,9 +15,9 @@ const Navbar = () => {
     return (
         <>
             {/* section that will hold everything in this page */}
-            <section className='font-all'>
+            <section className=''>
                 {/* section for date time and social links */}
-                <section className="bg-[#31473A] px-2 flex justify-between items-center w-full h-7">
+                <section className="bg-[#1A4D2E] px-2 flex justify-between items-center w-full h-7">
                     {/* date and time */}
                     <p className='text-white'>
                         {moment().format("dddd, MMM Do, YYYY")}
@@ -31,9 +31,9 @@ const Navbar = () => {
                     </ul>
                 </section>
                 {/* section for logo and the routes/navigations */}
-                <section className='bg-gray-400 p-2 grid md:grid-cols-3'>
+                <section className='bg-gray-400 p-4 grid md:grid-cols-3'>
 
-                    <h3 className='tracking-tight text-3xl font-semibold'>
+                    <h3 className='tracking-tight text-4xl text-white font-semibold'>
                         <Link>
                             News portal
                         </Link>
@@ -49,9 +49,7 @@ before:inline-block before:size-6 before:bg-white checked:before:bg-blue-200 bef
 
 after:absolute after:end-1.5 after:top-[calc(50%-0.40625rem)] after:w-[.8125rem] after:h-[.8125rem] after:bg-no-repeat after:bg-[right_center] after:bg-[length:.8125em_.8125em] after:transform after:transition-all after:ease-in-out after:duration-200 after:opacity-70 checked:after:start-1.5 checked:after:end-auto" type="checkbox" id="darkSwitch" />
 
-                        <button className='btn'>
-                            Login
-                        </button>
+                        
                     </section>
 
 

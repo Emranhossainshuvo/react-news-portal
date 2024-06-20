@@ -13,8 +13,8 @@ const NewsDetailPage = () => {
             <section className="mt-10 flex flex-col">
                 <img className="" src={news.img} alt="" />
 
-                <h4 className="text-3xl font-semibold mt-7">{news.title}</h4>
-                <p className="mt-7">{news.description}</p>
+                <h4 className="text-4xl font-semibold mt-7">{news.title}</h4>
+                <p className="mt-7 text-xl font-semibold">{news.description}</p>
             </section>
         </>
     );
