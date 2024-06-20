@@ -8,12 +8,19 @@ import { ThemeContext } from '../../../Contexts/ThemeContext/ThemeContext';
 const Navbar = () => {
 
     const { setSearchQuery } = useContext(SearchContext);
-    const {setTheme} = useContext(ThemeContext) 
+    const {setTheme, theme} = useContext(ThemeContext) 
     
     const handleSearch = (e) => {
         setSearchQuery(e.target.value)
     }
 
+
+
+    const handleToggleButton = e => {
+        setTheme(!theme)
+    }
+
+    console.log(theme)
     return (
         <>
             {/* section that will hold everything in this page */}
@@ -45,7 +52,7 @@ const Navbar = () => {
                     <input onChange={handleSearch} type="text" className='ps-2 outline-none rounded-md' placeholder='Search anything...' />
 
                     <section className='flex gap-3 items-center justify-end'>
-                        <input data-hs-theme-switch="" className="relative w-[3.25rem] h-7 bg-gray-100 checked:bg-none checked:bg-blue-600 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 ring-1 ring-transparent focus:border-gray-700 focus:ring-gray-700 focus:outline-none appearance-none
+                        <input onClick={handleToggleButton} data-hs-theme-switch="" className="relative w-[3.25rem] h-7 bg-gray-100 checked:bg-none checked:bg-blue-600 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 ring-1 ring-transparent focus:border-gray-700 focus:ring-gray-700 focus:outline-none appearance-none
 
 before:inline-block before:size-6 before:bg-white checked:before:bg-blue-200 before:translate-x-0 checked:before:translate-x-full before:shadow before:rounded-full before:transform before:ring-0 before:transition before:ease-in-out before:duration-200
 
