@@ -58,8 +58,8 @@ const NewsCards = () => {
     return (
         <>
             <section className="dark:bg-[#0b1221]">
-                <section className="text-white my-4 py-5 px-2 ">
-                    <section className='flex border-b-2 pb-7 max-w-screen-2xl mx-auto justify-between items-center'>
+                <section className="text-white py-5 px-2 ">
+                    <section className='flex border-b-2  pb-7 max-w-screen-2xl mx-auto justify-between items-center'>
                         <div className="flex flex-col md:flex-row justify-center mx-auto gap-1">
                             <NavLink onClick={() => handleBusiness("business")} className="p-2 block text-lg font-bold rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Business</NavLink>
                             <NavLink onClick={() => handleBusiness("technology")} className="p-2 text-lg font-bold block rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Technology</NavLink>
