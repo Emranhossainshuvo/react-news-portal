@@ -61,10 +61,14 @@ const NewsCards = () => {
                 <section className="text-white py-5 px-2 ">
                     <section className='flex border-b-2  pb-7 max-w-screen-2xl mx-auto justify-between items-center'>
                         <div className="flex flex-col md:flex-row justify-center mx-auto gap-1">
-                            <NavLink onClick={() => handleBusiness("business")} className="p-2 block text-lg font-bold rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Business</NavLink>
-                            <NavLink onClick={() => handleBusiness("technology")} className="p-2 text-lg font-bold block rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Technology</NavLink>
-                            <NavLink onClick={() => handleBusiness("entertainment")} className="p-2 rounded-sm block bg-[#F5EFE6] text-lg font-bold text-[#1A4D2E]">Entertainment</NavLink>
-                            <NavLink onClick={() => handleBusiness("science")} className="p-2 rounded-sm block bg-[#F5EFE6] text-lg font-bold text-[#1A4D2E]">Science</NavLink>
+                            <section className='flex gap-1'>
+                                <NavLink onClick={() => handleBusiness("business")} className="p-2 text-center w-[133px] block text-lg font-bold rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Business</NavLink>
+                                <NavLink onClick={() => handleBusiness("technology")} className="p-2 text-center w-[133px] text-lg font-bold block rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Technology</NavLink>
+                            </section>
+                            <section className='flex gap-1'>
+                                <NavLink onClick={() => handleBusiness("entertainment")} className="p-2 text-center rounded-sm block w-[133px] bg-[#F5EFE6] text-lg font-bold text-[#1A4D2E]">Entertainment</NavLink>
+                                <NavLink onClick={() => handleBusiness("science")} className="p-2 rounded-sm w-[133px] block text-center bg-[#F5EFE6] text-lg font-bold text-[#1A4D2E]">Science</NavLink>
+                            </section>
                         </div>
                     </section>
                 </section>
