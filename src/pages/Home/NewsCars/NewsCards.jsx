@@ -56,9 +56,9 @@ const NewsCards = () => {
 
     return (
         <>
-            <section className="">
-                <section className=" text-white my-4 bg-gray-400 py-5 px-2 ">
-                    <section className='flex  max-w-screen-2xl mx-auto justify-between items-center'>
+            <section className="dark:bg-[#0b1221]">
+                <section className="text-white my-4 py-5 px-2 ">
+                    <section className='flex border-b-2 pb-7 max-w-screen-2xl mx-auto justify-between items-center'>
                         <div>
                             <span className="bg-[#1A4D2E] text-lg font-bold p-2 rounded-sm capitalize">{tabQuery}</span>
                         </div>
@@ -77,7 +77,7 @@ const NewsCards = () => {
                     ))}
                 </section>
 
-                <div className="flex gap-2 justify-center my-10">
+                <div className="flex gap-2 py-4 justify-center my-10">
                     <button
                         onClick={handlePrevPage}
                         disabled={currentPage === 1}

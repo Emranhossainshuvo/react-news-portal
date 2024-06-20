@@ -29,8 +29,8 @@ const NewsCard = ({ news }) => {
 
     return (
         <>
-                <div onClick={handelNavigation} className="card cursor-pointer hover:shadow-sm hover:shadow-black rounded-none bg-base-100 shadow-xl">
-                    <figure><img className="h-64" src={img ? img : "https://st4.depositphotos.com/14953852/24787/v/380/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"} alt={title} /></figure>
+                <div onClick={handelNavigation} className="card flex flex-col m-1 cursor-pointer hover:shadow-sm hover:shadow-black rounded-none bg-base-100 shadow-xl">
+                    <figure><img className="h-72" src={img ? img : "https://st4.depositphotos.com/14953852/24787/v/380/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"} alt={title} /></figure>
                     <div className="card-body flex flex-col items-start">
                         <h2 className="card-title">{truncateTitle(description, 4)}</h2>
                         <p>{truncateText(description, 10)}</p>

@@ -31,16 +31,16 @@ const Navbar = () => {
     return (
         <>
             {/* section that will hold everything in this page */}
-            <section className="bg-white">
+            <section className="border-b-2 border-black pt-5 dark:bg-[#0b1221]">
                 {/* section for date time and social links */}
-                <section className=" px-2   w-full h-7">
+                <section className=" px-2 w-full h-7">
                     <section className='flex max-w-screen-2xl mx-auto justify-between items-center'>
                         {/* date and time */}
-                        <p className='text-black '>
+                        <p className='text-black dark:text-white'>
                             {moment().format("dddd, MMM Do, YYYY")}
                         </p>
                         {/* social links */}
-                        <ul className='flex gap-5 text-black '>
+                        <ul className='flex gap-5 text-black dark:text-white'>
                             <li><FaFacebook /></li>
                             <li><FaTwitter /></li>
                             <li><FaLinkedinIn /></li>
@@ -52,17 +52,17 @@ const Navbar = () => {
                 <section className='    p-4 '>
 
                     <section className='md:grid md:grid-cols-3 max-w-screen-2xl mx-auto'>
-                        <h3 className=' text-4xl text-black  font-medium'>
+                        <h3 className=' text-4xl text-black dark:text-white  font-medium'>
                             <Link>
                                 News portal
                             </Link>
 
                         </h3>
 
-                        <input onChange={handleSearch} type="text" className='ps-2 bg-gray-300  outline-none rounded-md' placeholder='Search anything...' />
+                        <input onChange={handleSearch} type="text" className='ps-2 h-12 bg-gray-600 dark:bg-gray-300  outline-none rounded-md' placeholder='Search anything...' />
 
                         <section className='flex gap-3 items-center justify-end'>
-                            <input onClick={toggleTheme} data-hs-theme-switch="" className="relative w-[3.25rem] h-7 bg-gray-100 checked:bg-none checked:bg-blue-600 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 ring-1 ring-transparent focus:border-gray-700 focus:ring-gray-700 focus:outline-none appearance-none
+                            <input onClick={toggleTheme} data-hs-theme-switch="" className="relative w-[3.25rem] h-7 bg-gray-300 checked:bg-none checked:bg-blue-600 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 ring-1 ring-transparent focus:border-gray-700 focus:ring-gray-700 focus:outline-none appearance-none
 
 before:inline-block before:size-6 before:bg-white checked:before:bg-blue-200 before:translate-x-0 checked:before:translate-x-full before:shadow before:rounded-full before:transform before:ring-0 before:transition before:ease-in-out before:duration-200
 

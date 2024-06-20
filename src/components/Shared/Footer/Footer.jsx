@@ -1,8 +1,8 @@
 
 const Footer = () => {
     return (
-        <>
-            <footer className="bg-white  max-w-screen-2xl mx-auto rounded-lg shadow dark:bg-gray-900 m-4">
+        <div className="bg-white dark:bg-[#0b1221]">
+            <footer className="max-w-screen-2xl mx-auto rounded-lg shadow dark:bg-[#0b1221] m-4">
                 <div className="w-full mx-auto p-4 md:py-8">
                     <div className="sm:flex sm:items-center sm:justify-between">
                         <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
@@ -24,12 +24,12 @@ const Footer = () => {
                         </ul>
                     </div>
                     <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-                    <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a  className="hover:underline">News portal</a>. All Rights Reserved.</span>
+                    <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a className="hover:underline">News portal</a>. All Rights Reserved.</span>
                 </div>
             </footer>
 
 
-        </>
+        </div>
     );
 };
 
