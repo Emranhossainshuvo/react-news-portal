@@ -60,7 +60,7 @@ const NewsCards = () => {
             <section className="dark:bg-[#0b1221]">
                 <section className="text-white py-5 px-2 ">
                     <section className='flex border-b-2  pb-7 max-w-screen-2xl mx-auto justify-between items-center'>
-                        <section className='flex flex-col justify-center items-center w-full mx-auto gap-4'>
+                        <section className='flex  flex-col justify-center items-center w-full mx-auto gap-4'>
                             <h3 className='text-3xl text-black dark:text-white font-semibold'>Top categories</h3>
                             <div className="flex flex-col md:flex-row justify-center mx-auto gap-1">
                                 <section className='flex gap-1'>

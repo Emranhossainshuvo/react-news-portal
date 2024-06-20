@@ -27,7 +27,7 @@ const Navbar = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
     }
 
-    console.log(theme)
+    // console.log(theme)
     return (
         <>
             {/* section that will hold everything in this page */}
