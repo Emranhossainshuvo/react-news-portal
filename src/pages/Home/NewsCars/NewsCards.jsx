@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import NewsCard from "./NewsCard";
 import { SearchContext } from "../../../Contexts/SearchContext/SearchContext";
+import { NavLink } from 'react-router-dom';
 
 const NewsCards = () => {
     const [articles, setArticles] = useState([]);
@@ -59,14 +60,11 @@ const NewsCards = () => {
             <section className="dark:bg-[#0b1221]">
                 <section className="text-white my-4 py-5 px-2 ">
                     <section className='flex border-b-2 pb-7 max-w-screen-2xl mx-auto justify-between items-center'>
-                        <div>
-                            <span className="bg-[#1A4D2E] text-lg font-bold p-2 rounded-sm capitalize">{tabQuery}</span>
-                        </div>
-                        <div className="flex gap-1">
-                            <button onClick={() => handleBusiness("business")} className="p-2 text-lg font-bold rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Business</button>
-                            <button onClick={() => handleBusiness("technology")} className="p-2 text-lg font-bold rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Technology</button>
-                            <button onClick={() => handleBusiness("entertainment")} className="p-2 rounded-sm bg-[#F5EFE6] text-lg font-bold text-[#1A4D2E]">Entertainment</button>
-                            <button onClick={() => handleBusiness("science")} className="p-2 rounded-sm bg-[#F5EFE6] text-lg font-bold text-[#1A4D2E]">Science</button>
+                        <div className="flex flex-col md:flex-row justify-center mx-auto gap-1">
+                            <NavLink onClick={() => handleBusiness("business")} className="p-2 block text-lg font-bold rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Business</NavLink>
+                            <NavLink onClick={() => handleBusiness("technology")} className="p-2 text-lg font-bold block rounded-sm bg-[#F5EFE6] text-[#1A4D2E]">Technology</NavLink>
+                            <NavLink onClick={() => handleBusiness("entertainment")} className="p-2 rounded-sm block bg-[#F5EFE6] text-lg font-bold text-[#1A4D2E]">Entertainment</NavLink>
+                            <NavLink onClick={() => handleBusiness("science")} className="p-2 rounded-sm block bg-[#F5EFE6] text-lg font-bold text-[#1A4D2E]">Science</NavLink>
                         </div>
                     </section>
                 </section>
@@ -81,14 +79,14 @@ const NewsCards = () => {
                     <button
                         onClick={handlePrevPage}
                         disabled={currentPage === 1}
-                        className="bg-gray-200 px-3 py-1 rounded-l"
+                        className="p-2 text-lg font-bold block rounded-sm bg-[#F5EFE6] text-[#1A4D2E]"
                     >
                         Previous
                     </button>
                     <button
                         onClick={handleNextPage}
                         disabled={indexOfLastArticle >= filteredArticles.length}
-                        className="bg-gray-200 px-3 py-1 rounded-r"
+                        className="p-2 text-lg font-bold block rounded-sm bg-[#F5EFE6] text-[#1A4D2E]"
                     >
                         Next
                     </button>
