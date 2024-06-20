@@ -3,11 +3,13 @@ import { FaFacebook, FaTwitter, FaLinkedinIn, FaDiscord } from "react-icons/fa6"
 import { SearchContext } from '../../../Contexts/SearchContext/SearchContext';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../../../Contexts/ThemeContext/ThemeContext';
 
 const Navbar = () => {
 
     const { setSearchQuery } = useContext(SearchContext);
-
+    const {setTheme} = useContext(ThemeContext) 
+    
     const handleSearch = (e) => {
         setSearchQuery(e.target.value)
     }

@@ -4,11 +4,14 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './Routes/Routes.jsx'
 import { SearchProvider } from './Contexts/SearchContext/SearchContext.jsx'
+import ThemeProvider from './Contexts/ThemeContext/ThemeContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <SearchProvider>
-      <RouterProvider router={router} />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </SearchProvider>
   </React.StrictMode>,
 )
