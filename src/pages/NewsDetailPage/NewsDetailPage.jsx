@@ -11,10 +11,10 @@ const NewsDetailPage = () => {
         <>
             {/* section to hold everything in this page */}
             <section className="mt-10 flex flex-col">
-                <img className="" src={news.img} alt="" />
+                <img className="bg-cover h-[50vh] w-[4  0%] mx-auto bg-fixed" src={news.img} alt="" />
 
-                <h4 className="text-4xl font-semibold mt-7">{news.title}</h4>
-                <p className="mt-7 text-xl font-semibold">{news.description}</p>
+                <h4 className="text-4xl font-semibold max-w-screen-2xl mx-auto text-start mt-7">{news.title}</h4>
+                <p className="mt-7 max-w-screen-2xl mx-auto text-xl font-semibold">{news.description}</p>
             </section>
         </>
     );

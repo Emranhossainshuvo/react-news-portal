@@ -3,21 +3,25 @@ import NewsCards from "./NewsCars/NewsCards";
 import { SearchContext } from "../../Contexts/SearchContext/SearchContext";
 import Banner from "./Banner/Banner";
 import Navbar from "../../components/Shared/Navbar/Navbar";
-// import { Banner } from "flowbite-react";
 
 const Home = () => {
-
     const { searchQuery } = useContext(SearchContext);
 
     return (
         <>
-            <div className="dark:bg-gradient-to-r dark:from-[#0f132a] dark:via-[#15365e] dark:to-[#18173b]">
-                {/* <Navbar /> */}
-                {!searchQuery &&
-                    <Banner />
-                }
+            <div className="relative">
+                <div
+                    style={{ backgroundImage: "url(https://i.ibb.co/VNKR1R5/2149501563.jpg)" }}
+                    className="absolute inset-0 bg-fixed bg-cover bg-center z-0"
+                >
+                </div>
+                <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-10"></div>
+                <div className="relative z-20">
+                    {/* <Navbar /> */}
+                    {!searchQuery && <Banner />}
+                </div>
             </div>
-                <NewsCards />
+            <NewsCards />
         </>
     );
 };

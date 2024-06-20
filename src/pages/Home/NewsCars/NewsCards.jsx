@@ -52,7 +52,7 @@ const NewsCards = () => {
         setCurrentPage(prevPage => prevPage - 1);
     };
 
-    if (loading) return <p className='flex text-5xl font-semibold justify-center items-center h-[100vh]'>Loading...</p>;
+    if (loading) return <p className='text-5xl text-center mt-5 h-[50vh]'>Loading...</p>;
     if (error) return <p>Error loading news: {error.message}</p>;
 
     return (

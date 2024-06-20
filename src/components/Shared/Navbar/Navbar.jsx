@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
 
     const { setSearchQuery } = useContext(SearchContext);
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+    const [theme, setTheme] = useState('light');
 
     const handleSearch = (e) => {
         setSearchQuery(e.target.value)
@@ -70,7 +70,7 @@ after:absolute after:end-1.5 after:top-[calc(50%-0.40625rem)] after:w-[.8125rem]
                             </section>
                         </section>
 
-                        <input onChange={handleSearch} type="text" className='ps-2 w-full md:w-[50%] md:mx-auto h-12 bg-gray-600 dark:bg-gray-300 flex justify-center outline-none rounded-md' placeholder='Search anything...' />
+                        <input onChange={handleSearch} type="text" className='ps-2 w-full md:w-[50%] md:mx-auto h-12 text-white dark:text-black bg-gray-600 dark:bg-gray-300 flex justify-center outline-none rounded-md' placeholder='Search anything...' />
 
                     </section>
 
