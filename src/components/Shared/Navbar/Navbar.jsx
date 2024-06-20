@@ -33,7 +33,7 @@ const Navbar = () => {
             {/* section that will hold everything in this page */}
             <section className={``}>
                 {/* section for date time and social links */}
-                <section className=" px-2 bg-white dark:bg-[#100404]  w-full h-7">
+                <section className=" px-2 bg-[#FBEFEF] dark:bg-[#100404]  w-full h-7">
                     <section className='flex max-w-screen-2xl mx-auto justify-between items-center'>
                         {/* date and time */}
                         <p className='text-black dark:text-white'>
@@ -49,7 +49,7 @@ const Navbar = () => {
                     </section>
                 </section>
                 {/* section for logo and the routes/navigations */}
-                <section className='bg-white dark:bg-[#100404]  p-4 '>
+                <section className='bg-[#FBEFEF] dark:bg-[#100404]  p-4 '>
 
                     <section className='md:grid md:grid-cols-3 max-w-screen-2xl mx-auto'>
                         <h3 className=' text-4xl text-black dark:text-white font-medium'>
