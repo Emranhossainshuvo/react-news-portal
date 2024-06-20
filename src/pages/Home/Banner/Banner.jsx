@@ -4,8 +4,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
 
-const Banner = () => {
 
+
+const Banner = () => {
     return (
         <>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper mt-10">

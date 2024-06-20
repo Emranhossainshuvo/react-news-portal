@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <>
             {/* section that will hold everything in this page */}
-            <section className=''>
+            <section className='font-all'>
                 {/* section for date time and social links */}
                 <section className="bg-[#31473A] px-2 flex justify-between items-center w-full h-7">
                     {/* date and time */}
