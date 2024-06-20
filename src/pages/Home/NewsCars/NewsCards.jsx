@@ -52,7 +52,7 @@ const NewsCards = () => {
         setCurrentPage(prevPage => prevPage - 1);
     };
 
-    if (loading) return <p className='text-5xl text-center mt-5 h-[50vh]'>Loading...</p>;
+    if (loading) return <p className='text-5xl text-center mt-5 text-black dark:text-white h-[50vh]'>Loading...</p>;
     if (error) return <p>Error loading news: {error.message}</p>;
 
     return (
@@ -69,7 +69,7 @@ const NewsCards = () => {
                     </section>
                 </section>
 
-                <section className="grid  max-w-screen-2xl mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                <section className="grid max-w-screen-2xl mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {currentArticles.map(article => (
                         <NewsCard key={article._id} news={article} />
                     ))}

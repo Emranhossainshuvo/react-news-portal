@@ -10,7 +10,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <SearchProvider>
       <ThemeProvider>
-        <RouterProvider router={router} />
+        <div className='bg-white dark:bg-[#0b1221]'>
+          <RouterProvider router={router} />
+        </div>
       </ThemeProvider>
     </SearchProvider>
   </React.StrictMode>,
