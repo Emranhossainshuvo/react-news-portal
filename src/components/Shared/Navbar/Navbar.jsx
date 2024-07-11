@@ -2,7 +2,7 @@ import moment from 'moment';
 import { FaFacebook, FaTwitter, FaLinkedinIn, FaDiscord } from "react-icons/fa6";
 import { SearchContext } from '../../../Contexts/SearchContext/SearchContext';
 import { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -49,6 +49,8 @@ const Navbar = () => {
                     </section>
                 </section>
                 {/* section for logo and the routes/navigations */}
+
+
                 <section className='p-4 '>
 
                     <section className='max-w-screen-2xl mx-auto'>
@@ -59,6 +61,17 @@ const Navbar = () => {
                                 </Link>
 
                             </h3>
+
+                            <section>
+                                <ul className='flex gap-4'>
+                                    <li className='bg-[#1a4d2e] p-1 rounded-sm text-white'>
+                                        <NavLink to={"/addNews"}>
+                                        Add news
+                                        </NavLink>
+                                        
+                                        </li>
+                                </ul>
+                            </section>
                             <section className='flex gap-3 items-center justify-end'>
                                 <input onClick={toggleTheme} data-hs-theme-switch="" className="relative w-[3.25rem] h-7 bg-gray-300 checked:bg-none checked:bg-blue-600 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 ring-1 ring-transparent focus:border-gray-700 focus:ring-gray-700 focus:outline-none appearance-none
 
@@ -69,15 +82,15 @@ after:absolute after:end-1.5 after:top-[calc(50%-0.40625rem)] after:w-[.8125rem]
 
                             </section>
                         </section>
-
-                        <input onChange={handleSearch} type="text" className='ps-2 w-full md:w-[50%] md:mx-auto h-12 text-white dark:text-black bg-gray-600 dark:bg-gray-300 flex justify-center outline-none rounded-md' placeholder='Search anything...' />
-
+                        
                     </section>
-
-
                 </section>
 
-            </section>
+
+                {/* search */}
+                <input onChange={handleSearch} type="text" className='ps-2 mb-10 w-full md:w-[50%] md:mx-auto h-12 text-white dark:text-black bg-gray-600 dark:bg-gray-300 flex justify-center outline-none rounded-md' placeholder='Search anything...' />
+            
+            </section>  
         </>
     );
 };
