@@ -1,11 +1,16 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/Shared/Navbar/Navbar";
 import Footer from "../components/Shared/Footer/Footer";
 
 const Main = () => {
+
+    const location = useLocation();
+
+    const isAddNews = location.pathname === "/addNews"
+
     return (
         <div className="font-all">
-            <Navbar />
+            {!isAddNews && <Navbar />}
             <Outlet />
             <Footer />
         </div>
